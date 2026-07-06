@@ -1,26 +1,23 @@
 # Changelog
 
-All notable changes to this project will automatically be documented in this file.
+All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## v0.2.0 - 2026-06-02
+---
 
-### What's Changed
+## [0.2.0](https://github.com/schubergphilis-ep/terraform-tfe-mcaf-variable-set/compare/v0.1.0...v0.2.0) (2026-06-02)
 
-#### 🚀 Features
 
-* feat: add option to attach variable set to parent project (#2) @marwinbaumannsbp
+### 🚀 Features
 
-**Full Changelog**: https://github.com/schubergphilis/terraform-tfe-mcaf-variable-set/compare/v0.1.0...v0.2.0
+* add option to attach variable set to parent project ([#2](https://github.com/schubergphilis/terraform-tfe-mcaf-variable-set/pull/2)) ([215061b](https://github.com/schubergphilis-ep/terraform-tfe-mcaf-variable-set/commit/215061b0fa7480eccd3ec8fb79377a441d031553))
 
-## v0.1.0 - 2025-03-25
+## 0.1.0 (2025-03-25)
 
-### What's Changed
 
-#### 🚀 Features
+### 🚀 Features
 
-* feature: manage variable sets (#1) @marwinbaumannsbp
+* manage variable sets ([#1](https://github.com/schubergphilis/terraform-tfe-mcaf-variable-set/pull/1)) ([996375c](https://github.com/schubergphilis-ep/terraform-tfe-mcaf-variable-set/commit/996375c40b26ae3ff7dbe37a1c1821ebbc8e3999))
 
-**Full Changelog**: https://github.com/schubergphilis/terraform-tfe-mcaf-variable-set/compare/...v0.1.0
