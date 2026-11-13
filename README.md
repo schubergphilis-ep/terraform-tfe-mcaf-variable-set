@@ -7,14 +7,14 @@ Terraform module to create HCP Terraform variable sets.
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9 |
-| <a name="requirement_tfe"></a> [tfe](#requirement\_tfe) | ~> 0.62 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.11 |
+| <a name="requirement_tfe"></a> [tfe](#requirement\_tfe) | ~> 0.82 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_tfe"></a> [tfe](#provider\_tfe) | ~> 0.62 |
+| <a name="provider_tfe"></a> [tfe](#provider\_tfe) | ~> 0.82 |
 
 ## Modules
 
@@ -26,6 +26,7 @@ No modules.
 |------|------|
 | [tfe_project_variable_set.default](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/project_variable_set) | resource |
 | [tfe_variable.default](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
+| [tfe_variable.write_only](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
 | [tfe_variable_set.default](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable_set) | resource |
 
 ## Inputs
@@ -40,6 +41,8 @@ No modules.
 | <a name="input_organization"></a> [organization](#input\_organization) | Name of the organization. If omitted, organization must be defined in the provider config. | `string` | `null` | no |
 | <a name="input_parent_project_id"></a> [parent\_project\_id](#input\_parent\_project\_id) | ID of the project that should own the variable set. If set, then var.global must be false. | `string` | `null` | no |
 | <a name="input_priority"></a> [priority](#input\_priority) | Whether the variables in this set can be over-written by more specific scopes including values set on the command line. | `bool` | `false` | no |
+| <a name="input_write_only_values"></a> [write\_only\_values](#input\_write\_only\_values) | Ephemeral values for the variables in 'write\_only\_variables'. | `map(string)` | `{}` | no |
+| <a name="input_write_only_variables"></a> [write\_only\_variables](#input\_write\_only\_variables) | Map of variables whose values are write-only. | <pre>map(object({<br/>    category         = string<br/>    description      = optional(string, null)<br/>    hcl              = optional(bool, false)<br/>    sensitive        = optional(bool, true)<br/>    value_wo_version = optional(number, null)<br/>  }))</pre> | `{}` | no |
 
 ## Outputs
 
