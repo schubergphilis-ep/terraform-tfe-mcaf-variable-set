@@ -54,3 +54,30 @@ variable "variables" {
   }))
   description = "Map of variables."
 }
+
+variable "write_only_values" {
+  type        = map(string)
+  default     = {}
+  description = "Ephemeral values for the variables in 'write_only_variables'."
+  ephemeral   = true
+  nullable    = false
+  sensitive   = true
+}
+
+variable "write_only_variables" {
+  type = map(object({
+    category         = string
+    description      = optional(string, null)
+    hcl              = optional(bool, false)
+    sensitive        = optional(bool, true)
+    value_wo_version = optional(number, null)
+  }))
+  default     = {}
+  description = "Map of variables whose values are write-only."
+  nullable    = false
+
+  validation {
+    condition     = length(setintersection(keys(var.variables), keys(var.write_only_variables))) == 0
+    error_message = "A variable name can only be set in either 'variables' or 'write_only_variables', not both."
+  }
+}

@@ -25,3 +25,16 @@ resource "tfe_variable" "default" {
   value           = each.value.value
   variable_set_id = tfe_variable_set.default.id
 }
+
+resource "tfe_variable" "write_only" {
+  for_each = var.write_only_variables
+
+  category         = each.value.category
+  description      = each.value.description
+  hcl              = each.value.hcl
+  key              = each.key
+  sensitive        = each.value.sensitive
+  value_wo         = var.write_only_values[each.key]
+  value_wo_version = each.value.value_wo_version
+  variable_set_id  = tfe_variable_set.default.id
+}
